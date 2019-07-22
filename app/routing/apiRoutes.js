@@ -6,6 +6,7 @@ var path = require("path");
 module.exports = function (app) { 
     app.post("/api/friends", function (req, res) {
         var doggo = req.body; 
-        console.log(doggo); 
+        // console.log(doggo); 
+        console.log ("hi"); 
     })
 }
