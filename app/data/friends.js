@@ -27,10 +27,10 @@ var friends = [
     {
         name: "Norbert the Dog", 
         photo: "https://images.squarespace-cdn.com/content/v1/55a2bffae4b037baec79f96e/1522585429159-Y9PILDV0QNVLP94B5ZMW/ke17ZwdGBToddI8pDm48kGDpvalPb1SqHoCn1hwN0Y57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmQPoRzxSr1hzN-vPBHt7YyLLXgctAyUJRqJUUGWVDK_ZzIgvsybGcZEPqUYiXY8im/Norbert+colorful+tie.jpg?format=500w", 
-        scores: [4, 4., 2, 1, 3, 5, 3, 2, 4, 1]
+        scores: [4, 4, 2, 1, 3, 5, 3, 2, 4, 1]
     }, 
 
 
 ]
 
-module.export = friends; 
+module.exports = friends; 

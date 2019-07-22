@@ -46,55 +46,55 @@
             >U're always thinkin of when 2 taik the next nap.</label
           >
           <select class="form-control" id="answer1">
-            <option>1 </option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5 </option>
+            <option value = "1">1 </option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5 </option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="question2">The mailman iz prety amazin.</label>
           <select class="form-control" id="answer2">
-            <option>1 </option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5 </option>
+            <option value = "1">1 </option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5 </option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="question3">U wag a lot when the hoomans come home.</label>
           <select class="form-control" id="answer3">
-            <option>1 </option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5 </option>
+            <option value = "1">1 </option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5 </option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="question4">U're the boss of the hoomans.</label>
           <select class="form-control" id="answer4">
-            <option>1 </option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5 </option>
+            <option value = "1">1 </option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5 </option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="question5">Doggos rule and katters drool.</label>
           <select class="form-control" id="answer5">
-            <option>1 </option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5 </option>
+            <option value = "1">1 </option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5 </option>
           </select>
         </div>
 
@@ -103,11 +103,11 @@
             >The best way 2 greet a new fren iz by snifin.</label
           >
           <select class="form-control" id="answer6">
-            <option>1 </option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5 </option>
+            <option value = "1">1 </option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5 </option>
           </select>
         </div>
 
@@ -116,44 +116,44 @@
             >U know how 2 get treats from the hoomans.</label
           >
           <select class="form-control" id="answer7">
-            <option>1 </option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5 </option>
+            <option value = "1">1 </option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5 </option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="question8">U liek hekkin long walks in the park.</label>
           <select class="form-control" id="answer8">
-            <option>1 </option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5 </option>
+            <option value = "1">1 </option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5 </option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="question9">Chimkin iz beter than cheeze.</label>
           <select class="form-control" id="answer9">
-            <option>1 </option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5 </option>
+            <option value = "1">1 </option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5 </option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="question10">Chimkin iz beter than cheeze.</label>
           <select class="form-control" id="answer10">
-            <option>1 </option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5 </option>
+            <option value = "1">1 </option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5 </option>
           </select>
         </div>
       </form>
@@ -180,7 +180,7 @@
 
     <script type="text/javascript">
       $("#submit").on("click", function() {
-        alert("hi");
+        // alert("hi");
         var dogObject = {
           // name: "Tank",
           // photo:
@@ -207,9 +207,8 @@
           url: "/api/friends",
           data: dogObject
         }).then(function(res) {
-          if (res) {
-            // console.log(res);
-          }
+          console.log (res), 
+          alert("Fetchin u a heckin new fren!")
         });
       });
     </script>
