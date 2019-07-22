@@ -21,7 +21,7 @@
           <input
             type="text"
             class="form-control"
-            id="formGroupExampleInput"
+            id="name"
             placeholder="Add ur doggos name"
           />
         </div>
@@ -30,7 +30,7 @@
           <input
             type="text"
             class="form-control"
-            id="formGroupExampleInput2"
+            id="pic"
             placeholder="Add a link 2 a photo of ur doggo"
           />
         </div>
@@ -181,10 +181,12 @@
       $("#submit").on("click", function() {
         alert("hi");
         var dogObject = {
-          name: "Karen",
-          photo:
-            "https://images.squarespace-cdn.com/content/v1/55a2bffae4b037baec79f96e/1522585429159-Y9PILDV0QNVLP94B5ZMW/ke17ZwdGBToddI8pDm48kGDpvalPb1SqHoCn1hwN0Y57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmQPoRzxSr1hzN-vPBHt7YyLLXgctAyUJRqJUUGWVDK_ZzIgvsybGcZEPqUYiXY8im/Norbert+colorful+tie.jpg",
-          scores: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+          // name: "Tank", 
+          // photo:
+          //   "https://images.squarespace-cdn.com/content/v1/55a2bffae4b037baec79f96e/1522585429159-Y9PILDV0QNVLP94B5ZMW/ke17ZwdGBToddI8pDm48kGDpvalPb1SqHoCn1hwN0Y57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmQPoRzxSr1hzN-vPBHt7YyLLXgctAyUJRqJUUGWVDK_ZzIgvsybGcZEPqUYiXY8im/Norbert+colorful+tie.jpg",
+          // scores: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+          name: $("#name").val(),  
+          photo: $("#pic").val(), 
         };
 
         $.ajax({
