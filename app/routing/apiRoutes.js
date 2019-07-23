@@ -30,20 +30,30 @@ module.exports = function (app) {
 
         // For loop that loops through both the doggos scores and the ones in the json
         for (var i = 0; i < friends.length; i++) {
+            var currentDoggo = friends[i]; 
             var totalDiff = 0; 
+            console.log (currentDoggo.name); 
+            // console.log(currentDoggo.scores); 
+            // console.log (doggoScores); 
 
-            for (var h = 0; h < doggoScores; h++) {
-                totalDiff += Math.abs(friends[i].scores[h] - doggoScores[i]); 
+            for (var h = 0; h < currentDoggo.scores.length; h++) {
+                totalDiff += Math.abs(parseInt(currentDoggo.scores[h]) - parseInt(doggoScores[h])); 
+                // console.log("current dog" + currentDoggo.scores[h]); 
+                // console.log("doggo" + doggoScores[h]); 
             }
-
+            console.log (totalDiff); 
+            console.log(doggoMatch.difference); 
             if (totalDiff <= doggoMatch.difference) { 
                 doggoMatch.name = friends[i].name; 
                 doggoMatch.photo = friends[i].photo; 
                 doggoMatch.difference = totalDiff; 
             }
+            console.log(doggoMatch.difference); 
+            console.log ("--------------------------"); 
         }
+       
 
-        console.log(doggoMatch); 
+        // console.log(doggoMatch); 
     
     })
 
