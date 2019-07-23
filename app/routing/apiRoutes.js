@@ -53,7 +53,10 @@ module.exports = function (app) {
         }
        
 
-        // console.log(doggoMatch); 
+        console.log(doggoMatch);
+        console.log ("---------------"); 
+        friends.push(newDoggo); 
+        console.log(friends);  
     
     })
 
