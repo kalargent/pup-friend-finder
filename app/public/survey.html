@@ -162,6 +162,26 @@
       </button>
     </div>
 
+    <div class="modal" tabindex="-1" role="dialog" id ="results">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Ur new fren!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h2 id = "name">Name</h2>
+            <p id= "pic">Photo</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tanks! I luv my new fren!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -206,10 +226,15 @@
           type: "POST",
           url: "/api/friends",
           data: dogObject
-        }).then(function(res) {
-          console.log (res), 
-          alert("Fetchin u a heckin new fren!")
+        }).then(function(data) {
+          console.log ("----------------data--------")
+          console.log (data); 
+          console.log ("----------------data--------")
+          $("#name").text(doggoMatch.name);
+          $("#photo").attr("src", doggoMatch.photo); 
+          // alert("Fetchin u a heckin new fren!")
         });
+        $("#results").modal("show");
       });
     </script>
   </body>
