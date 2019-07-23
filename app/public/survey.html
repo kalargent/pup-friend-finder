@@ -162,8 +162,8 @@
       </button>
     </div>
 
-    <div class="modal" tabindex="-1" role="dialog" id ="results">
-      <div class="modal-dialog" role="document">
+    <!-- <div class="modal" tabindex="-1" role="dialog" id ="results">
+      <div class="modal-dialog" role="document"></div></div>
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Ur new fren!</h5>
@@ -172,15 +172,39 @@
             </button>
           </div>
           <div class="modal-body">
-            <h2 id = "name">Name</h2>
-            <p id= "pic">Photo</p>
+            <p id = "name"></p>
+            <p id = "pic"></p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tanks! I luv my new fren!</button>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+
+    <!-- Modal -->
+
+	<div id="results" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	      </div>
+	      <div class="modal-body">
+	        <h2 id="matchName"></h2>
+	        <img id="matchImg" src="https://media1.tenor.com/images/6aa7e077981042124dbf66f0b8554cbb/tenor.gif?itemid=5266297" alt="">
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -199,6 +223,8 @@
     ></script>
 
     <script type="text/javascript">
+      // var match = JSON.stringify(data); 
+
       $("#submit").on("click", function() {
         // alert("hi");
         var dogObject = {
@@ -225,18 +251,30 @@
         $.ajax({
           type: "POST",
           url: "/api/friends",
-          data: dogObject
-        }).then(function(data, status) {
-          alert(data +  status);
+          data: dogObject, 
+          datatype:"JSON", 
+          success: function(res) {  
+            $("#results").modal("show");
+          }
+        })
+        .then(function(data, status) {
+          var match = JSON.stringify(data);
+          var name = JSON.stringify(data.name); 
+          var pic = JSON.stringify(data.photo); 
+          alert(match + " " + status);  
           console.log ("-------data--------"); 
-          console.log (data); 
+          console.log (match); 
+          console.log (name); 
+          console.log (pic); 
           console.log ("-------data--------"); 
-          $("#name").text(data.name);
-          $("#pic").attr("src", data.photo); 
+          $("#matchName").text(name); 
+          $("#matchImg").attr("src", pic); 
           // alert("Fetchin u a heckin new fren!")
+          // $("#results").modal("show");
         });
-        $("#results").modal("show");
+        // $("#results").modal("show");
       });
+      
     </script>
   </body>
 </html>
