@@ -54,7 +54,7 @@ module.exports = function (app) {
        
 
         console.log(doggoMatch);
-        console.log ("---------------"); 
+        console.log ("---------------");
         friends.push(newDoggo); 
         console.log(friends);  
     
