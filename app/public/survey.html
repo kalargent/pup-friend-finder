@@ -15,8 +15,8 @@
 
     <div class="container">
       <h2>Tell us about ur doggo!</h2>
-      <form>
-        <div class="form-group">
+      <form class="theForm" id="form1">
+        <div class="form-group info" id = "info">
           <label for="formGroupExampleInput">Ur Naim</label>
           <input
             type="text"
@@ -25,7 +25,7 @@
             placeholder="Add ur doggos name"
           />
         </div>
-        <div class="form-group">
+        <div class="form-group info">
           <label for="formGroupExampleInput2">Ur Photo </label>
           <input
             type="text"
@@ -40,8 +40,8 @@
     <hr />
 
     <div class="container">
-      <form>
-        <div class="form-group">
+      <form class="theForm" id="form2">
+        <div class="form-group info" id ="questions">
           <label for="question1"
             >U're always thinkin of when 2 taik the next nap.</label
           >
@@ -54,7 +54,7 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group info">
           <label for="question2">The mailman iz prety amazin.</label>
           <select class="form-control" id="answer2">
             <option value = "1">1 </option>
@@ -65,7 +65,7 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group info">
           <label for="question3">U wag a lot when the hoomans come home.</label>
           <select class="form-control" id="answer3">
             <option value = "1">1 </option>
@@ -76,7 +76,7 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group info">
           <label for="question4">U're the boss of the hoomans.</label>
           <select class="form-control" id="answer4">
             <option value = "1">1 </option>
@@ -87,7 +87,7 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group info">
           <label for="question5">Doggos rule and katters drool.</label>
           <select class="form-control" id="answer5">
             <option value = "1">1 </option>
@@ -98,7 +98,7 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group info">
           <label for="question6"
             >The best way 2 greet a new fren iz by snifin.</label
           >
@@ -111,7 +111,7 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group info">
           <label for="question7"
             >U know how 2 get treats from the hoomans.</label
           >
@@ -124,7 +124,7 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group info">
           <label for="question8">U liek hekkin long walks in the park.</label>
           <select class="form-control" id="answer8">
             <option value = "1">1 </option>
@@ -135,7 +135,7 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group info">
           <label for="question9">Chimkin iz beter than cheeze.</label>
           <select class="form-control" id="answer9">
             <option value = "1">1 </option>
@@ -146,7 +146,7 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group info">
           <label for="question10">Chimkin iz beter than cheeze.</label>
           <select class="form-control" id="answer10">
             <option value = "1">1 </option>
@@ -172,8 +172,8 @@
             </button>
           </div>
           <div class="modal-body">
-            <p id = "name"></p>
-            <p id = "pic"></p>
+            <p id = "nameOfDog"></p>
+            <p id = "photoOfDog"></p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tanks! I luv my new fren!</button>
@@ -194,11 +194,11 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 	      </div>
 	      <div class="modal-body">
-	        <h2 id="matchName"></h2>
-	        <img id="matchImg" src="" alt="">
+	        <h2 id="nameOfDog"></h2>
+	        <img id="photoOfDog" src="" alt="">
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal" id = "close">Close</button>
 	      </div>
 	    </div>
 
@@ -255,6 +255,8 @@
           datatype:"JSON", 
           success: function(res) {  
             $("#results").modal("show");
+            $("#form1")[0].reset();  
+            $("#form2")[0].reset();
           }
         })
         .then(function(data, status) {
@@ -265,8 +267,8 @@
           console.log (data.name);
           console.log (data.photo);  
           console.log ("-------data--------"); 
-          $("#matchName").text(data.name); 
-          $("#matchImg").attr("src", data.photo); 
+          $("#nameOfDog").text(data.name); 
+          $("#photoOfDog").attr("src", data.photo); 
           // $("#name").text(name); 
           // $("#pic").attr("src", pic); 
           // alert("Fetchin u a heckin new fren!")
@@ -274,6 +276,8 @@
         });
         // $("#results").modal("show");
       });
+
+      
       
     </script>
   </body>
