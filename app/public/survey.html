@@ -182,12 +182,12 @@
       </div>
     </div> -->
 
-    <!-- Modal -->
+   
 
 	<div id="results" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
 
-	    <!-- Modal content-->
+	    
 	    <div class="modal-content">
 	      <div class="modal-header">
           <h2 class="modal-title"><strong>Best Match</strong></h2>
@@ -195,7 +195,7 @@
 	      </div>
 	      <div class="modal-body">
 	        <h2 id="matchName"></h2>
-	        <img id="matchImg" src="https://media1.tenor.com/images/6aa7e077981042124dbf66f0b8554cbb/tenor.gif?itemid=5266297" alt="">
+	        <img id="matchImg" src="" alt="">
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -258,17 +258,17 @@
           }
         })
         .then(function(data, status) {
-          var match = JSON.stringify(data);
-          var name = JSON.stringify(data.name); 
-          var pic = JSON.stringify(data.photo); 
-          alert(match + " " + status);  
+
+          // alert(match + " " + status);  
           console.log ("-------data--------"); 
-          console.log (match); 
-          console.log (name); 
-          console.log (pic); 
+          console.log (data);
+          console.log (data.name);
+          console.log (data.photo);  
           console.log ("-------data--------"); 
-          $("#matchName").text(name); 
-          $("#matchImg").attr("src", pic); 
+          $("#matchName").text(data.name); 
+          $("#matchImg").attr("src", data.photo); 
+          // $("#name").text(name); 
+          // $("#pic").attr("src", pic); 
           // alert("Fetchin u a heckin new fren!")
           // $("#results").modal("show");
         });
