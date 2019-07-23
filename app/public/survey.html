@@ -226,12 +226,13 @@
           type: "POST",
           url: "/api/friends",
           data: dogObject
-        }).then(function(data) {
-          console.log ("----------------data--------")
+        }).then(function(data, status) {
+          alert(data +  status);
+          console.log ("-------data--------"); 
           console.log (data); 
-          console.log ("----------------data--------")
-          $("#name").text(doggoMatch.name);
-          $("#photo").attr("src", doggoMatch.photo); 
+          console.log ("-------data--------"); 
+          $("#name").text(data.name);
+          $("#pic").attr("src", data.photo); 
           // alert("Fetchin u a heckin new fren!")
         });
         $("#results").modal("show");
