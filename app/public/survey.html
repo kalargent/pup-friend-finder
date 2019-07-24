@@ -7,14 +7,21 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" type= "text/css" href="../css/style.css">
   </head>
 
   <body>
-    <h1 class="surveyHeader">Doggo Survey Questions</h1>
-    <hr />
 
+    <!-- HEADER CONTAINER -->
+    <div class = "container">
+      <p></p>
+      <h1 class="surveyHeader">Doggo Survey Questions</h1>
+      <hr />
+    </div>
+
+    <!-- CONTAINER FOR TEXT ENTRY  -->
     <div class="container">
-      <h2>Tell us about ur doggo!</h2>
+      <h2>Tell us about urself!</h2>
       <form class="theForm" id="form1">
         <div class="form-group info" id = "info">
           <label for="formGroupExampleInput">Ur Naim</label>
@@ -39,6 +46,9 @@
 
     <hr />
 
+    <!-- QUESTION CONTAINER -->
+    <!-- each question has six options the first of which is blank. each numeric option has a value assigned. this allows me to calculate the -->
+    <!-- total score but still allows text for guidance in the form -->
     <div class="container">
       <form class="theForm" id="form2">
         <div class="form-group info" id ="questions">
@@ -156,7 +166,7 @@
         </div>
 
         <div class="form-group info">
-          <label for="question10">Chimkin iz beter than cheeze.</label>
+          <label for="question10">Goin 2 the doggo park iz beter than goin on a hike.</label>
           <select class="form-control" id="answer10">
             <option> </option>
             <option value = "1">1 (hekk no!)</option>
@@ -171,28 +181,6 @@
         Find me a new fren!
       </button>
     </div>
-
-    <!-- <div class="modal" tabindex="-1" role="dialog" id ="results">
-      <div class="modal-dialog" role="document"></div></div>
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Ur new fren!</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p id = "nameOfDog"></p>
-            <p id = "photoOfDog"></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tanks! I luv my new fren!</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-   
 
 	<div id="results" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
@@ -215,7 +203,7 @@
 	  </div>
 	</div>
 
-
+  <!-- SCRIPTS -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -233,11 +221,14 @@
     ></script>
 
     <script type="text/javascript">
-      // var match = JSON.stringify(data); 
+      
 
+      // ON CLICK FOR SUBMIT BUTTON 
+      // this captures the data from the fields, constructs an object, and sends it to the server, and takes back the match.
       $("#submit").on("click", function() {
         // alert("hi");
         var dogObject = {
+          // HARDCODED VALUES TO TEST SUBMIT WORKS AND SENDS TO API 
           // name: "Tank",
           // photo:
           //   "https://images.squarespace-cdn.com/content/v1/55a2bffae4b037baec79f96e/1522585429159-Y9PILDV0QNVLP94B5ZMW/ke17ZwdGBToddI8pDm48kGDpvalPb1SqHoCn1hwN0Y57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmQPoRzxSr1hzN-vPBHt7YyLLXgctAyUJRqJUUGWVDK_ZzIgvsybGcZEPqUYiXY8im/Norbert+colorful+tie.jpg",
@@ -258,6 +249,8 @@
           ]
         };
 
+        // posts the data and takes the response, parses it, and then on success, clears the form fields 
+        // and displays a modal with the matching dog 
         $.ajax({
           type: "POST",
           url: "/api/friends",
@@ -279,12 +272,8 @@
           console.log ("-------data--------"); 
           $("#nameOfDog").text(data.name); 
           $("#photoOfDog").attr("src", data.photo); 
-          // $("#name").text(name); 
-          // $("#pic").attr("src", pic); 
-          // alert("Fetchin u a heckin new fren!")
-          // $("#results").modal("show");
+          
         });
-        // $("#results").modal("show");
       });
 
       
