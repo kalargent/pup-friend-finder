@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended: true}));
 
 // CONNECTING THE MIDDLEWARE FILES 
 app.use(express.static(".app/public")); 
-app.use(express.static(__dirname + "app/css")); 
+app.use(express.static(__dirname + "/app")); 
 
 // REQUIRING APIS AND ROUTE JS FILES 
 require("./app/routing/htmlRoutes.js")(app); 
