@@ -1,4 +1,4 @@
-// REQUIRE PATH 
+// REQUIRED 
 var path = require("path"); 
 var friends = require("../data/friends.js"); 
 var express = require("express"); 
@@ -29,7 +29,7 @@ module.exports = function (app) {
             difference: 1000
         }
 
-        // For loop that loops through both the doggos scores and the ones in the json
+        // For loop that loops through both the doggos scores in friends.js and the ones coming in from the json
         for (var i = 0; i < friends.length; i++) {
             var currentDoggo = friends[i]; 
             var totalDiff = 0; 
@@ -42,6 +42,8 @@ module.exports = function (app) {
                 // console.log("current dog" + currentDoggo.scores[h]); 
                 // console.log("doggo" + doggoScores[h]); 
             }
+            // If statement that calculates the doggo match and populates the doggoMatch object with the doggo if
+            // they are the best match 
             console.log (totalDiff); 
             console.log(doggoMatch.difference); 
             if (totalDiff <= doggoMatch.difference) { 
@@ -53,12 +55,13 @@ module.exports = function (app) {
             console.log ("--------------------------"); 
         }
        
-
+        // log the match and push the new doggo into the friends.js file 
         console.log(doggoMatch);
         console.log ("---------------");
         friends.push(newDoggo); 
         // console.log(friends);  
 
+        // return matching doggo 
         res.json(doggoMatch); 
 
     

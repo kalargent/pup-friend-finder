@@ -1,7 +1,7 @@
-// REQUIRE PATH 
+// REQUIRED 
 var path = require("path"); 
 
-// ADD A GET FOR THE HOME PAGE 
+// ADD A GET FOR THE HOME PAGE AND FOR THE SURVEY PAGE  
 
 module.exports = function (app) { 
     app.get("/", function (req, res) {
@@ -12,9 +12,3 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname + "/../public/survey.html"))
     })
 }
-
-
-
-
-
-// ADD A GET FOR THE SURVEY PAGE 

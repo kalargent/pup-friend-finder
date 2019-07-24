@@ -10,13 +10,13 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({extended: true})); 
 
 // CONNECTING THE MIDDLEWARE FILES 
-
 app.use(express.static(".app/public")); 
 app.use(express.static(__dirname + "app/css")); 
 
+// REQUIRING APIS AND ROUTE JS FILES 
 require("./app/routing/htmlRoutes.js")(app); 
 require("./app/routing/apiRoutes.js")(app); 
-// require("./app/routing/")(app); 
+
 
 // LISTENER 
 app.listen(PORT, function (){ 
