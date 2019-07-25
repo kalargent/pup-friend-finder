@@ -1,3 +1,5 @@
+// SEE READ ME FOR THE RESOURCES I USED TO HELP WITH THIS PROJECT
+
 // REQUIRED 
 var path = require("path"); 
 var friends = require("../data/friends.js"); 
