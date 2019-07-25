@@ -8,6 +8,9 @@ Of course, matching people is boring, so this matching app is geared toward dogs
 
 Which dog will be your best match?
 
+## Video 
+[Click here to view a demo](https://embed.vidyard.com/share/BmR4rzQmfZrZo5joCMK2uH? "Named link title") 
+
 ## Technologies Used 
 * Node JS 
 * Javascript 
